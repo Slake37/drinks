@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { BiDrink } from "react-icons/bi";
 
 const cocktailbyingredient = () => {
   const [cocktails, setCocktails] = useState();
@@ -20,6 +21,12 @@ const cocktailbyingredient = () => {
   }, []);
   return (
     <div className="text-white p-2 flex flex-col justify-center items-start max-w-4xl mx-auto  m-auto mt-[6rem]">
+      <Link href={"/"}>
+        <button className="neon-border my-5 flex justify-center items-center gap-3 px-5 py-1 hover:bg-[#bc13fe] transition-all hover:scale-105">
+          <BiDrink />
+          Back to Home
+        </button>
+      </Link>
       <p>
         Cocktails that contain{" "}
         <span className="uppercase">{params.ingredient}</span>
